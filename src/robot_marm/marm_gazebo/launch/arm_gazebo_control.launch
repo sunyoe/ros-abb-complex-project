@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 启动gazebo -->
+    <include file="$(find marm_gazebo)/launch/arm_world.launch" />
+
+    <!-- 启动gazebo控制器 -->
+    <include file="$(find marm_gazebo)/launch/arm_gazebo_controller.launch" />
+</launch>

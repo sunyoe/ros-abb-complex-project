@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <rosparam file="$(find marm_gazebo)/config/trajectory_control.yaml" command="load"></rosparam>
+    <node pkg="controller_manager" type="spawner" name="arm_controller_spawner" respawn="false"
+        output="screen" ns="/arm" args="arm_joint_controller gripper_controller">        
+    </node>
+</launch>

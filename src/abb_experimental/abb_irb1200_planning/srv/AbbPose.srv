@@ -1,0 +1,13 @@
+# define the client request
+uint32 get_data_signal
+---
+# define the result from server
+uint32 item_id
+float32 position_x
+float32 position_y
+float32 position_z
+float32 orientation_x
+float32 orientation_y
+float32 orientation_z
+float32 orientation_w
+uint32 time

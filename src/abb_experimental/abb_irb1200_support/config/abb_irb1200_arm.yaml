@@ -1,0 +1,12 @@
+joints: {
+  joint_1: {id: 1, max_angle: 170, min_angle: -170, max_speed: 288},
+  joint_2: {id: 2, max_angle: 130, min_angle: -100, max_speed: 240},
+  joint_3: {id: 3, max_angle: 70, min_angle: -200, max_speed: 300},
+  joint_4: {id: 4, max_angle: 270, min_angle: -270, max_speed: 400},
+  joint_5: {id: 5, max_angle: 130, min_angle: -130, max_speed: 405},
+  joint_6: {id: 6, max_angle: 360, min_angle: -360, max_speed: 600},
+}
+
+controllers: {
+  arm_controller: {type: follow_controller, joints: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6], action_name: arm_controller/joint_trajectory_action, onboard: False}
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowRos</title>
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js" ></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js" ></script>
+    <script type="text/javascript" type="text/javascript">
+        // Connecting to ROS
+        var ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090'
+        });
+
+        // 判断是否连接成功并输出相应的提示消息到web控制台
+        ros.on("connection", function(){
+            console.log("Connected to websocket server.");
+        });
+
+        ros.on('error', function(error){
+            console.log("Error connecting to websocket server: ", error);
+        });
+
+        ros.on('close', function(){
+            console.log("Connecting to websocket server closed.");
+        })
+
+        // Publishing a Topic
+        var cmdVel = new ROSLIB.Topic({
+            ros: ros,
+            name: '/cmd_vel',
+            messageType: "geometry_msgs/Twist",
+        });// 创建一个topic，他的名字是"/cmd_vel"，消息类型是"geometry_msgs/Twist"
+
+        // 创建一个message
+        var twist = new ROSLIB.Message({
+            linear: {
+                x: 0.1,
+                y: 0.2,
+                z: 0.3
+            },
+            angular: {
+                x: -0.1,
+                y: -0.2,
+                z: -0.3
+            }
+        });
+
+        // Subscribing to a topic
+        // 创建一个topic，名字是"/chatter"，消息类型是"std_msgs/String"
+        function func(){
+            cmdVel.publish(twist);
+            twist.linear.x = twist.linear.x + 0.1;
+            twist.linear.y = twist.linear.y + 0.1;
+            twist.linear.z = twist.linear.z + 0.1;
+            twist.angular.x = twist.angular.x + 0.1;
+            twist.angular.y = twist.angular.y + 0.1;
+            twist.angular.z = twist.angular.z + 0.1;
+        }
+
+        var listener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/chatter',
+            messageType: "std_msgs/String"
+        });
+
+        function subscribe(){
+            listener.subscribe(function(message){
+                document.getElementById("output").innerHTML = ('Received message on ' + listener.name + ": " + message.data);
+            });
+        }
+
+        function unsubscribe(){
+            listener.unsubscribe();
+        }
+    </script>   
+</head>
+<body>
+    <h1>Simple roslib Example</h1>
+    <p>Check Your Web Console for Output.</p>
+    <button onclick = "func()" >Publish</button>
+    <button onclick = "subscribe()" >Subscribe</button>
+    <button onclick = "unsubscribe()" >Unsubscribe</button><br />
+</body>
+</html>

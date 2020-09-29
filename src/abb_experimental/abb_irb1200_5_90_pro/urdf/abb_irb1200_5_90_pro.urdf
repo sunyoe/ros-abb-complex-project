@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="abb_irb1200_5_90_pro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0234766859273817 0.000475066000100835 0.11222146740818"
+        rpy="0 0 0" />
+      <mass
+        value="10.6451285666599" />
+      <inertia
+        ixx="0.0737908050464972"
+        ixy="0.000550020392592509"
+        ixz="-0.000623170436356199"
+        iyy="0.0995132048296759"
+        iyz="-0.000164216545966457"
+        izz="0.088939961872183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-0.00326177258392991 0.000450029564274852 0.102310274093596"
+        rpy="0 0 0" />
+      <mass
+        value="6.06581169886879" />
+      <inertia
+        ixx="0.0758258065917847"
+        ixy="-2.45384974649811E-05"
+        ixz="-0.000560982374312303"
+        iyy="0.04806984087826"
+        iyz="9.73772174748047E-05"
+        izz="0.0552679089677698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0.00031297 0 0.219"
+      rpy="0 0.0014291 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.97"
+      upper="2.97"
+      effort="0"
+      velocity="5.024" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.0126974754382805 -0.0611604618960377 0.217543414091853"
+        rpy="0 0 0" />
+      <mass
+        value="7.97330747509977" />
+      <inertia
+        ixx="0.266961083429924"
+        ixy="5.94736550931065E-05"
+        ixz="-0.00108389164634301"
+        iyy="0.244725261343608"
+        iyz="0.000345415472918007"
+        izz="0.0431960298764457" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.00036445 0.06 0.18104"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.744"
+      upper="2.355"
+      effort="0"
+      velocity="4.187" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.0979088448131415 -0.0594011081440037 0.0348713478634244"
+        rpy="0 0 0" />
+      <mass
+        value="6.43038434536914" />
+      <inertia
+        ixx="0.0202981109441044"
+        ixy="8.90823699470417E-05"
+        ixz="-0.00388107560329751"
+        iyy="0.0520354783687515"
+        iyz="4.17292684113863E-05"
+        izz="0.0458989929634624" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="-0.00036445 -0.0005 0.44706"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.48"
+      upper="1.221"
+      effort="0"
+      velocity="5.233" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.36475 0.002713 0.00074253"
+        rpy="0 0 0" />
+      <mass
+        value="1.6656" />
+      <inertia
+        ixx="0.0035221"
+        ixy="-0.0002418"
+        ixz="4.875E-05"
+        iyy="0.0062965"
+        iyz="-1.7918E-06"
+        izz="0.0067932" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0 -0.059645 0.042"
+      rpy="0 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-4.71"
+      upper="4.71"
+      effort="0"
+      velocity="6.978" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="0.0083985 0.00032248 -2.9882E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.50758" />
+      <inertia
+        ixx="0.0003756"
+        ixy="-8.3532E-06"
+        ixz="3.2915E-08"
+        iyy="0.00087134"
+        iyz="1.6383E-08"
+        izz="0.00073015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0.451 -0.001855 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.268"
+      upper="2.268"
+      effort="0"
+      velocity="7.065" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="0.10235 -6.1484E-15 -2.2905E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.67851" />
+      <inertia
+        ixx="0.00088172"
+        ixy="1.5137E-17"
+        ixz="2.0262E-11"
+        iyy="0.00045463"
+        iyz="1.4763E-10"
+        izz="0.00092901" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7451 0.7451 0.7451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://abb_irb1200_5_90_pro/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="0.077 0.002 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-6.283"
+      upper="6.283"
+      effort="0"
+      velocity="10.467" />
+  </joint>
+</robot>

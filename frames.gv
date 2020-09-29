@@ -1,0 +1,16 @@
+digraph G {
+"base_link" -> "bottom_link"[label="Broadcaster: /rob_st_pub\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1594040313.895 sec old)\nBuffer length: 0.000 sec\n"];
+"link6" -> "gripper_finger_link2"[label="Broadcaster: /rob_st_pub\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1594040313.895 sec old)\nBuffer length: 0.000 sec\n"];
+"link5" -> "link6"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"link6" -> "grasping_frame"[label="Broadcaster: /rob_st_pub\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1594040313.895 sec old)\nBuffer length: 0.000 sec\n"];
+"link6" -> "gripper_finger_link1"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"base_link" -> "link1"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"link1" -> "link2"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"link2" -> "link3"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"link3" -> "link4"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+"link4" -> "link5"[label="Broadcaster: /rob_st_pub\nAverage rate: 9.349 Hz\nMost recent transform: 1594040313.862 ( 0.033 sec old)\nBuffer length: 4.920 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1594040313.895"[ shape=plaintext ] ;
+ }->"base_link";
+}

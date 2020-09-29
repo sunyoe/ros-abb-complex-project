@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- this launch file includes rosserial, rossocket and rosbridge launch so that you can launch them all-->
+    
+    <node name="arduino_crtl" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM0" output="screen" />
+
+    <node name="visual_crtl" pkg="rosserial_server" type="socket_node" />
+
+    <node name="tf2_web_republisher" pkg="tf2_web_republisher" type="tf2_web_republisher" />
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+    <node name="abb_srv_server" pkg="abb_irb1200_planning" type="abb_srv_server.py" />
+
+    <node name="abb_torque_socket_server" pkg="abb_irb1200_planning" type="abb_torque_socket.py" />
+</launch>
